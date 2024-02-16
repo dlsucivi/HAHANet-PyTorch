@@ -19,25 +19,44 @@
         <div id="header">
             <h1 id="header-title">HAHANet <br> Towards Accurate Image Classifiers with Less Parameters</h1>
             <div id="header-author-list">
-                <h2 class="header-author">Arren Matthew C. Antioquia</h2>
+                <h2 class="header-author"> <a class="link" href="https://arvention.github.io/"> Arren Matthew C. Antioquia </a> </h2>
                 <h2 class="header-author">Macario Cordel II</h2>
             </div>
 
-            <!-- <nav id="nav-list">
-                <a class="link nav-item"> CODE </a>
-                <a class="link nav-item"> PAPER </a>
-            </nav> -->
-
-            <h3 id="header-publication"> Pacific-Rim Symposium on Image and Video Technology (PSIVT) 2023 </h3>
+            <h3 id="header-publication"> <a class="link" href="https://psivt2023.aut.ac.nz/"> Pacific-Rim Symposium on Image and Video Technology (PSIVT) 2023 </a> </h3>
         </div>
 
         <div id="content">
-            <img id="teaser-img" src="saliency.png">
-            <p id="content-abstract">
-                Utilizing classical convolutional networks results in lackluster performance in certain classification tasks. To address this problem, recent solutions add extra layers or sub-networks to increase the classification performance of existing networks. More recent methods employ multiple networks coupled with varying learning strategies. However, these approaches demand larger memory and computational requirement due to additional layers, prohibiting usage in devices with limited computing power. In this paper, we propose an efficient convolutional block which minimizes the computational requirements of a network while maintaining information flow through concatenation and element-wise addition. We design a classification architecture, called Half-Append Half-Add Network (HAHANet), built using our efficient convolutional block. Our approach achieves state-of-the-art accuracy on several challenging fine-grained classification tasks. More importantly, HAHANet outperforms top networks while reducing parameter count by at most 54 times. Our code and trained models are publicly available here.
-            </p>
-        </div>
+            <div class="section">
+                <p class="content-text">
+                    Recent studies on classification add extra layers or sub-networks to increase the accuracy of existing networks. More recent methods employ multiple networks coupled with varying learning strategies. However, these approaches demand larger memory and computational requirement due to additional layers, prohibiting usage in devices with limited computing power. In this work, we propose an efficient convolutional block which minimizes the computational requirements of a network while maintaining information flow through concatenation and element-wise addition. We design a classification architecture, called Half-Append Half-Add Network (HAHANet), built using our efficient convolutional block. Our approach achieves state-of-the-art accuracy on several challenging fine-grained classification tasks. More importantly, HAHANet outperforms top networks while reducing parameter count by at most 54 times. Our code and trained models are publicly available <a class="link" href="https://github.com/dlsucivi/HAHANet-PyTorch"> here</a>.
+                </p>
+                <img class="image" src="saliency.svg">
+                <p class="content-text content-caption">
+                    <span class="content-it"> Figure: </span> Saliency maps produced by HAHANet on various images from different datasets. <span class="content-it"> (Left) </span> Saliency maps show that the color of the outer portion of the egg is important in differentiating between a boiled egg from a scotch egg (columns 1-2). <span class="content-it"> (Middle) </span> Body patterns are important in identifying insects, as seen in the saliency maps for beet flies (column 3), citrus flat mite (column 4), and ampelophaga (column 5). <span class="content-it"> (Right) </span> The shape of the hood in Volkswagen Beetle Hatchback is one of its notable features (column 6), while the top of the windshield is a prominent feature in convertible cars like the Fiat 500 and Audi S5 (columns 7-8).
+                </p>
+            </div>
 
+            <div class="section">
+                <h2 class="content-header"> Our Method </h2>
+                <p class="content-text">Half-Append Half-Add (HAHA) block implements efficient connections by appending half of the output as input to succeeding layers and propagates the rest through the network via element-wise addition, as shown below. HAHA block maintains strong information flow within the network while reducing its parameter count.</p>
+
+                <img class="image" src="hahanet-with-block.svg">
+
+                <p class="content-text content-caption"> <span class="content-it"> Figure: (Top)</span> Half-Append Half-Add Network (HAHANet). The first four layers constitute the basic feature block which captures rudimentary features essential for classification tasks. Spatial resolution of the input image is reduced by shrink blocks placed between HAHA blocks. * means the stride is 2. <span class="content-it">(Bottom)</span> Each HAHA layer produces <span class="content-it">k</span> feature maps. The first <span class="content-it">k/2</span> output feature maps produced from the HAHA layer are concatenated with the first <span class="content-it">k/2</span> feature maps from the output of previous HAHA layers. The second <span class="content-it">k/2</span> output feature maps produced from the HAHA layer are added element-wise to the second <span class="content-it">k/2</span> feature maps from the output of previous HAHA layers.</p>
+            </div>
+
+            <div>
+                <h2 class="content-header"> Our Results </h2>
+                <p class="content-text">
+                    We evaluated our proposed model on various fine-grained classification datasets, such as <a class="link" href="https://arxiv.org/abs/1907.06167">Foodx-251</a>, <a class="link" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_IP102_A_Large-Scale_Benchmark_Dataset_for_Insect_Pest_Recognition_CVPR_2019_paper.html"> IP102</a>, <a class="link" href="https://aaai.org/papers/06194-logo-2k-a-large-scale-logo-dataset-for-scalable-logo-classification/"> Logo2k+</a>, <a class="link" href="https://openaccess.thecvf.com/content/ICCV2021/html/Sun_Webly_Supervised_Fine-Grained_Recognition_Benchmark_Datasets_and_an_Approach_ICCV_2021_paper.html"> Web-Aircraft</a>, and <a class="link" href="https://openaccess.thecvf.com/content/ICCV2021/html/Sun_Webly_Supervised_Fine-Grained_Recognition_Benchmark_Datasets_and_an_Approach_ICCV_2021_paper.html"> Web-Car</a>. Results of our experiments using two configurations of our proposed network are shown below. Our network surpasses the performance of current top classification architectures with larger network size, both single models and ensemble networks, while significantly reducing parameter count.
+                </p>
+                <img class="image" src="results.svg">
+                <p class="content-text content-caption"> <span class="content-it"> Figure: Classification results.</span> Our HAHANet models outperform current state-of-the-art CNN architectures, both single models and ensembles, on different datasets from various domains while significantly reducing parameter count.
+                </p>
+            </div>
+
+        </div>
     </div>
 
 </body>
