@@ -18,12 +18,18 @@
     <div id="container">
         <div id="header">
             <h1 id="header-title">HAHANet <br> Towards Accurate Image Classifiers with Less Parameters</h1>
-            <div id="header-author-list">
-                <h2 class="header-author"> <a class="link" href="https://arvention.github.io/"> Arren Matthew C. Antioquia </a> </h2>
-                <h2 class="header-author">Macario Cordel II</h2>
+            <div class="header-list">
+                <h2 class="header-item"> <a class="link" href="https://arvention.github.io/"> Arren Matthew C. Antioquia </a> </h2>
+                <h2 class="header-item">Macario Cordel II</h2>
             </div>
 
             <h3 id="header-publication"> <a class="link" href="https://psivt2023.aut.ac.nz/"> Pacific-Rim Symposium on Image and Video Technology (PSIVT) 2023 </a> </h3>
+
+            <div id="header-menu" class="header-list">
+                <a class="link header-item" href="https://github.com/dlsucivi/HAHANet-PyTorch">[Code]</a>
+                <a class="link header-item" href="https://link.springer.com/chapter/10.1007/978-981-97-0376-0_19">[Paper]</a>
+                <a class="link header-item" href="#citation">[Citation]</a>
+            </div>
         </div>
 
         <div id="content">
@@ -46,7 +52,7 @@
                 <p class="content-text content-caption"> <span class="content-it"> Figure: (Top)</span> Half-Append Half-Add Network (HAHANet). The first four layers constitute the basic feature block which captures rudimentary features essential for classification tasks. Spatial resolution of the input image is reduced by shrink blocks placed between HAHA blocks. * means the stride is 2. <span class="content-it">(Bottom)</span> Each HAHA layer produces <span class="content-it">k</span> feature maps. The first <span class="content-it">k/2</span> output feature maps produced from the HAHA layer are concatenated with the first <span class="content-it">k/2</span> feature maps from the output of previous HAHA layers. The second <span class="content-it">k/2</span> output feature maps produced from the HAHA layer are added element-wise to the second <span class="content-it">k/2</span> feature maps from the output of previous HAHA layers.</p>
             </div>
 
-            <div>
+            <div class="section">
                 <h2 class="content-header"> Our Results </h2>
                 <p class="content-text">
                     We evaluated our proposed model on various fine-grained classification datasets, such as <a class="link" href="https://arxiv.org/abs/1907.06167">Foodx-251</a>, <a class="link" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Wu_IP102_A_Large-Scale_Benchmark_Dataset_for_Insect_Pest_Recognition_CVPR_2019_paper.html"> IP102</a>, <a class="link" href="https://aaai.org/papers/06194-logo-2k-a-large-scale-logo-dataset-for-scalable-logo-classification/"> Logo2k+</a>, <a class="link" href="https://openaccess.thecvf.com/content/ICCV2021/html/Sun_Webly_Supervised_Fine-Grained_Recognition_Benchmark_Datasets_and_an_Approach_ICCV_2021_paper.html"> Web-Aircraft</a>, and <a class="link" href="https://openaccess.thecvf.com/content/ICCV2021/html/Sun_Webly_Supervised_Fine-Grained_Recognition_Benchmark_Datasets_and_an_Approach_ICCV_2021_paper.html"> Web-Car</a>. Results of our experiments using two configurations of our proposed network are shown below. Our network surpasses the performance of current top classification architectures with larger network size, both single models and ensemble networks, while significantly reducing parameter count.
@@ -54,6 +60,19 @@
                 <img class="image" src="results.svg">
                 <p class="content-text content-caption"> <span class="content-it"> Figure: Classification results.</span> Our HAHANet models outperform current state-of-the-art CNN architectures, both single models and ensembles, on different datasets from various domains while significantly reducing parameter count.
                 </p>
+            </div>
+
+            <div class="section" id="citation">
+                <h2 class="content-header"> Cite Our Paper </h2>
+                <pre id="context-text-citation">
+@inproceedings{antioquia2023hahanet,
+    title={HAHANet: Towards Accurate Image Classifiers with Less Parameters},
+    author={Antioquia, Arren Matthew C and Cordel II, Macario O},
+    booktitle={Pacific-Rim Symposium on Image and Video Technology},
+    pages={246--258},
+    year={2023},
+    organization={Springer}
+}</pre>
             </div>
 
         </div>

@@ -51,23 +51,11 @@ body {
     text-align: center;
 }
 
-#header-author-list {
+.header-list {
     display: flex;
     justify-content: center;
 
     font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-#nav-list {
-    display: flex;
-    justify-content: center;
-}
-
-.nav-item {
-    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: 1px;
-    margin-right: 20px;
-    cursor: pointer;
 }
 
 #header-publication {
@@ -117,22 +105,8 @@ body {
     text-align: center;
 }
 
-.content-emp {
-    font-weight: 600;
-}
-
 .content-it {
     font-style: italic;
-}
-
-.content-small {
-    font-size: 16px;
-}
-
-#index-main-content {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
 }
 
 .content-text {
@@ -141,48 +115,17 @@ body {
 }
 
 .content-caption {
-    padding: 0 7.5%;
+    padding: 0 8%;
 }
 
-.subsection-title {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding-top: 40px;
-    font-size: 22px;
-}
-
-.subsubsection:nth-child(2) {
-    margin-top: 25px;
-}
-
-.subsubsection {
-    margin-top: 50px;
-}
-
-.subsubsection h4 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
+#context-text-citation {
+    font-family: Consolas, Courier, monospace;
     letter-spacing: 0.2px;
-    font-size: 20px;
-}
 
-.content-small {
-    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: 0.2px;
-    line-height: 22px;
-    margin-top: 15px;
-}
-
-.subsubsection ol {
-    margin-top: 20px;
-    list-style-position: inside;
-}
-
-.subsubsection ol li {
-    font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: 0.2px;
-    line-height: 22px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #f0f0f0;
+    border-radius: 10px;
 }
 
 /* mobile */
@@ -204,17 +147,21 @@ body {
         margin-bottom: 30px;
     }
 
-    #header-author-list {
+    .header-list {
         font-size: 14px;
         flex-direction: column;
         margin-bottom: 14px;
     }
 
-    .header-author {
+    .header-item {
         text-align: center;
     }
 
-    #header-publication, .content-text {
+    #header-publication {
+        margin-bottom: 14px;
+    }
+
+    #header-publication, #header-menu, #context-text-citation, .content-text {
         font-size: 14px;
     }
 
@@ -229,18 +176,9 @@ body {
         margin-bottom: 15px;
     }
 
-    .content-text {
+    .content-text, #context-text-citation {
         line-height: 18px;
         margin: 20px 0;
-    }
-
-    #nav-list {
-        margin-top: 15px;
-        margin-bottom: 30px;
-    }
-
-    .nav-item {
-        font-size: 12px;
     }
 
 }
@@ -264,17 +202,21 @@ body {
         margin-bottom: 20px;
     }
 
-    #header-author-list {
+    .header-list {
         font-size: 20px;
         flex-direction: row;
         margin-bottom: 20px;
     }
 
-    .header-author {
+    .header-item {
         margin: 0 20px;
     }
 
-    #header-publication, .content-text {
+    #header-publication {
+        margin-bottom: 20px;
+    }
+
+    #header-publication, #header-menu, #context-text-citation, .content-text {
         font-size: 18px;
     }
 
@@ -288,16 +230,9 @@ body {
         margin-bottom: 40px;
     }
 
-    .content-text {
+    .content-text, #context-text-citation {
         line-height: 25px;
         margin: 40px 0;
     }
 
-    #nav-list {
-        margin-top: 40px;
-    }
-
-    .nav-item {
-        font-size: 18px;
-    }
 }
