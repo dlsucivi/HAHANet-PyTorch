@@ -121,6 +121,7 @@ body {
 #context-text-citation {
     font-family: Consolas, Courier, monospace;
     letter-spacing: 0.2px;
+    white-space: pre-wrap;
 
     padding: 20px;
     border: 1px solid #e0e0e0;
