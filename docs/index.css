@@ -92,7 +92,6 @@ body {
     text-decoration: underline;
 }
 
-
 #content {
     width: 100%;
 }
@@ -118,15 +117,22 @@ body {
     padding: 0 8%;
 }
 
-#context-text-citation {
-    font-family: Consolas, Courier, monospace;
-    letter-spacing: 0.2px;
-    white-space: pre-wrap;
-
+#content-text-citation-div {
     padding: 20px;
     border: 1px solid #e0e0e0;
     background-color: #f0f0f0;
     border-radius: 10px;
+}
+
+#context-text-citation {
+    font-family: Consolas, Courier, monospace;
+    letter-spacing: 0.2px;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+#content-text-citation-indent {
+    padding-left: 40px;
 }
 
 /* mobile */
@@ -136,20 +142,15 @@ body {
         width: 90%;
     }
 
-    #header-logo {
-        width: 72px;
-        height: 72px;
-    }
-
     #header-title {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 24px;
+        line-height: 24px;
         margin-top: 15px;
         margin-bottom: 30px;
     }
 
     .header-list {
-        font-size: 14px;
+        font-size: 16px;
         flex-direction: column;
         margin-bottom: 14px;
     }
@@ -163,7 +164,7 @@ body {
     }
 
     #header-publication, #header-menu, #context-text-citation, .content-text {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .image {
@@ -178,7 +179,10 @@ body {
     }
 
     .content-text, #context-text-citation {
-        line-height: 18px;
+        line-height: 20px;
+    }
+
+    .content-text {
         margin: 20px 0;
     }
 
@@ -189,11 +193,6 @@ body {
 
     #container {
         width: 80%;
-    }
-
-    #header-logo {
-        width: 100px;
-        height: 100px;
     }
 
     #header-title {
@@ -233,6 +232,9 @@ body {
 
     .content-text, #context-text-citation {
         line-height: 25px;
+    }
+
+    .content-text {
         margin: 40px 0;
     }
 
